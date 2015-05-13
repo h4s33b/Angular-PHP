@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Angular JS with PHP</title>
+</head>
+<body>
+
+<!-- Starting a Controller -->
+	<div ng-controller="customersCtrl">
+	<!-- Creating a Search Filter -->
+	<label>Search: <input ng-model="searchText"></label>
+
+	<!-- Showing the output From PHP DATA -->
+		<table>
+		  <tr ng-repeat="x in names | filter:searchText">
+		    <td>{{ x.admin_name }}</td>
+		    <td>{{ x.user_id }}</td>
+		  </tr>
+		</table>
+	</div>
+
+<!-- Controller Ended -->
+	
+	<!-- Including the library and Controller File -->
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="app/controllers.js"></script>
+			
+</body>
+</html>
